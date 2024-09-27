@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://7fd1waqm2mb"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/inventory_item.gd" id="1_pr1sw"]
+[ext_resource type="Texture2D" uid="uid://cp2wkk3imfccv" path="res://asstes/inventory/items/genericItem_color_004.png" id="2_lpn7q"]
+
+[resource]
+script = ExtResource("1_pr1sw")
+name = "wrench"
+texture = ExtResource("2_lpn7q")
+stackable = true

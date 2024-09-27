@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://8c3oryhor5xe"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/inventory_item.gd" id="1_078cl"]
+[ext_resource type="Texture2D" uid="uid://b0abx7c5h5eri" path="res://asstes/inventory/items/genericItem_color_155.png" id="2_57mdd"]
+
+[resource]
+script = ExtResource("1_078cl")
+name = "key"
+texture = ExtResource("2_57mdd")
+stackable = true

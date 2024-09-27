@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdppnklw3q20j"]
+
+[ext_resource type="Script" path="res://Levels/wrong_box.gd" id="1_1dw7w"]
+[ext_resource type="Texture2D" uid="uid://c377clxlunvo4" path="res://asstes/inventory/crates_study_x2.png" id="2_38vnt"]
+[ext_resource type="AudioStream" uid="uid://xgae1d8xqckt" path="res://asstes/inventory/sound/wronganswer-37702.mp3" id="3_fv6or"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vibd2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyfjb"]
+size = Vector2(262.826, 260.83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0kb2"]
+size = Vector2(86.51, 87.8063)
+
+[node name="box" type="Node2D"]
+script = ExtResource("1_1dw7w")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(38, 40)
+scale = Vector2(0.292969, 0.310547)
+physics_material_override = SubResource("PhysicsMaterial_vibd2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-1.70667, -1.61006)
+shape = SubResource("RectangleShape2D_qyfjb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(38, 40)
+scale = Vector2(0.292969, 0.310547)
+texture = ExtResource("2_38vnt")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.92284, 0.888319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(41.0878, 45.0289)
+shape = SubResource("RectangleShape2D_x0kb2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fv6or")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

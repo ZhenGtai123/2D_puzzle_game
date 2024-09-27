@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://dboefqtpk254v"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/inv_ui.gd" id="1_6adgi"]
+[ext_resource type="Texture2D" uid="uid://dlg8t04lu3v24" path="res://asstes/inventory/UI/panelInset_beige.png" id="2_h6ddb"]
+[ext_resource type="PackedScene" uid="uid://b4p8ohuw4ejyn" path="res://Scenes/inventory/grabbed_slot.tscn" id="2_sqy1f"]
+[ext_resource type="PackedScene" uid="uid://dmups0elwmxhb" path="res://Scenes/inventory/slot.tscn" id="3_nabgy"]
+
+[node name="Control" type="Control"]
+modulate = Color(1, 1, 1, 0.870588)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 199.0
+offset_bottom = 152.0
+script = ExtResource("1_6adgi")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 148.0
+texture = ExtResource("2_h6ddb")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+clip_contents = true
+layout_mode = 1
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 184.0
+offset_bottom = 146.0
+columns = 5
+
+[node name="Slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot20" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="grabbed_slot" parent="." instance=ExtResource("2_sqy1f")]
+visible = false
+layout_mode = 2
+offset_left = 8.0
+offset_top = 150.0
+offset_right = 40.0
+offset_bottom = 182.0
+mouse_force_pass_scroll_events = false

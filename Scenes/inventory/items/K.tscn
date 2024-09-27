@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj0m7bq1jqmd8"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/items/item.gd" id="1_44xxu"]
+[ext_resource type="Script" path="res://Scenes/inventory/inventory_item.gd" id="2_vrxvn"]
+[ext_resource type="Texture2D" uid="uid://bjaydrfrax1l7" path="res://asstes/Code/K.PNG" id="3_cqeuy"]
+
+[sub_resource type="Resource" id="Resource_hi6kg"]
+script = ExtResource("2_vrxvn")
+name = "K"
+texture = ExtResource("3_cqeuy")
+stackable = false
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5pql"]
+radius = 56.0089
+
+[node name="K" type="Node2D"]
+script = ExtResource("1_44xxu")
+item = SubResource("Resource_hi6kg")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(44, 34)
+shape = SubResource("CircleShape2D_j5pql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(46, 34)
+scale = Vector2(0.520141, 0.552854)
+texture = ExtResource("3_cqeuy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

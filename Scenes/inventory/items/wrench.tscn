@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb6mwadvhqpye"]
+
+[ext_resource type="Texture2D" uid="uid://cp2wkk3imfccv" path="res://asstes/inventory/items/genericItem_color_004.png" id="1_350fm"]
+[ext_resource type="Script" path="res://Scenes/inventory/items/item.gd" id="1_xx83d"]
+[ext_resource type="Resource" uid="uid://7fd1waqm2mb" path="res://Scenes/inventory/items/wrench.tres" id="2_0xeuk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kemr5"]
+radius = 57.0
+
+[node name="wrench" type="Node2D"]
+script = ExtResource("1_xx83d")
+item = ExtResource("2_0xeuk")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(34, 42)
+shape = SubResource("CircleShape2D_kemr5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 36)
+texture = ExtResource("1_350fm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

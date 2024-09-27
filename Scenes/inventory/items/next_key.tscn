@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://k5bg4r1rb2ok"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/items/item.gd" id="1_ln63e"]
+[ext_resource type="Resource" uid="uid://cc3x6ghi3jwpd" path="res://Scenes/inventory/items/next_key.tres" id="2_7qkhj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfkxf"]
+radius = 57.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qda02"]
+load_path = "res://.godot/imported/key.png-c90c05b11336c6f22cbdbf5706ec3edc.ctex"
+
+[node name="item" type="Node2D" groups=["key"]]
+script = ExtResource("1_ln63e")
+item = ExtResource("2_7qkhj")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(32, 33)
+shape = SubResource("CircleShape2D_jfkxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(31, 33)
+scale = Vector2(1.5172, 1.44463)
+texture = SubResource("CompressedTexture2D_qda02")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

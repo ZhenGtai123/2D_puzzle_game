@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtq0ki3l55gpw"]
+
+[ext_resource type="Texture2D" uid="uid://8y7fdqk6vgj5" path="res://asstes/inventory/items/genericItem_color_162.png" id="1_5iheh"]
+[ext_resource type="Script" path="res://Scenes/inventory/items/item.gd" id="1_gi21f"]
+[ext_resource type="Resource" uid="uid://bclam6g4w0qwd" path="res://Scenes/inventory/items/map.tres" id="2_8ce8b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5pql"]
+radius = 56.0089
+
+[node name="map" type="Node2D"]
+script = ExtResource("1_gi21f")
+item = ExtResource("2_8ce8b")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(44, 34)
+shape = SubResource("CircleShape2D_j5pql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(43.4117, 31.302)
+scale = Vector2(0.658825, 0.751848)
+texture = ExtResource("1_5iheh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

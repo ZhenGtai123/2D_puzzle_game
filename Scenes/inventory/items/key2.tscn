@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://vaej1c5yeuvb"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/items/item.gd" id="1_njgob"]
+[ext_resource type="Resource" uid="uid://bjqeyqtp0taic" path="res://Scenes/inventory/items/key2.tres" id="2_fluny"]
+[ext_resource type="Texture2D" uid="uid://6mduvghjq7to" path="res://asstes/inventory/items/genericItem_color_154.png" id="3_tbbce"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jfkxf"]
+radius = 57.0
+
+[node name="item" type="Node2D" groups=["key"]]
+script = ExtResource("1_njgob")
+item = ExtResource("2_fluny")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(32, 33)
+shape = SubResource("CircleShape2D_jfkxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(31, 33)
+texture = ExtResource("3_tbbce")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

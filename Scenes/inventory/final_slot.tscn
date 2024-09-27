@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsphqr4pymtel"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/final_slot.gd" id="1_yjjiw"]
+[ext_resource type="Texture2D" uid="uid://bp634raexsy8c" path="res://asstes/kenney_ui-pack/PNG/red_button03.png" id="2_yt4s6"]
+
+[sub_resource type="FontFile" id="FontFile_5xyna"]
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/13/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/13/0 = Vector2(0, 0)
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(3, 3)
+script = ExtResource("1_yjjiw")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(16.1667, 15.8333)
+scale = Vector2(0.646258, 0.659864)
+texture = ExtResource("2_yt4s6")
+
+[node name="item_display" type="Sprite2D" parent="."]
+position = Vector2(16.1667, 14.5)
+scale = Vector2(0.5, 0.46)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 14.0
+offset_right = 30.0
+offset_bottom = 40.0
+theme_override_fonts/font = SubResource("FontFile_5xyna")
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 2

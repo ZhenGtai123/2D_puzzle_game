@@ -1,0 +1,293 @@
+[gd_scene load_steps=15 format=3 uid="uid://ber4o11wr03bd"]
+
+[ext_resource type="Script" path="res://Levels/puzzle_room_1.gd" id="1_87ch0"]
+[ext_resource type="PackedScene" uid="uid://b0fn3ogr4nvsx" path="res://Scenes/player.tscn" id="1_wn73y"]
+[ext_resource type="PackedScene" uid="uid://nneplcyswr75" path="res://Scenes/tile_map.tscn" id="2_v0w82"]
+[ext_resource type="Texture2D" uid="uid://b2gg4s7pnugh2" path="res://asstes/PNG/Default/Transparent border/panel-transparent-border-024.png" id="4_54mjv"]
+[ext_resource type="Texture2D" uid="uid://cumgvd2nbwfqh" path="res://asstes/PNG/Default/Transparent border/panel-transparent-border-026.png" id="5_exebr"]
+[ext_resource type="Texture2D" uid="uid://b8hthktve7m04" path="res://asstes/PNG/Default/Transparent center/panel-transparent-center-012.png" id="6_jr0dr"]
+[ext_resource type="PackedScene" uid="uid://b51yqx18tbbw3" path="res://Scenes/inventory/items/Code1.tscn" id="7_vuik7"]
+[ext_resource type="AudioStream" uid="uid://c0dc6rnc6qcvf" path="res://asstes/Sounds/mixkit-gear-fast-lock-tap-2857.wav" id="10_d5je7"]
+[ext_resource type="AudioStream" uid="uid://bkqbvpl0jie8p" path="res://asstes/Sounds/mixkit-gear-metallic-lock-sound-2858.wav" id="11_3gblf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wcba"]
+size = Vector2(20, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymvw4"]
+size = Vector2(20, 191.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7oxqf"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_px0ss"]
+font_size = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcbbp"]
+size = Vector2(12, 13)
+
+[node name="puzzle-room1" type="Node2D"]
+script = ExtResource("1_87ch0")
+
+[node name="TileMap" parent="." instance=ExtResource("2_v0w82")]
+layer_0/tile_data = PackedInt32Array(65535, 1572864, 1, 0, 1572864, 1, 1, 1572864, 1, 65534, 1572864, 1, 65533, 1572864, 1, 2, 1572864, 1, -3, 1572864, 1, -2, 1572864, 1, -1, 1572864, 1, -65536, 1572864, 1, -65535, 1572864, 1, -65534, 1572864, 1, -65539, 1572864, 1, -65538, 1572864, 1, -65537, 1572864, 1, -131072, 1572864, 1, -131071, 1572864, 1, -131070, 1572864, 1, 131069, 1572864, 1, 131070, 1572864, 1, 131071, 1572864, 1, 65536, 1572864, 1, 65537, 1572864, 1, 65538, 1572864, 1, 196605, 1572864, 1, 196606, 1572864, 1, 196607, 1572864, 1, 131072, 1572864, 1, 131073, 1572864, 1, 131074, 1572864, 1, -65540, 1572864, 1, -4, 1572864, 1, 65532, 1572864, 1, 131068, 1572864, 1, 196604, 1572864, 1, -131069, 1572864, 1, -65533, 1572864, 1, 3, 1572864, 1, 65539, 1572864, 1, 131075, 1572864, 1, -131076, 1572864, 1, -131075, 1572864, 1, -131074, 1572864, 1, -131073, 1572864, 1, -196608, 1572864, 1, -196607, 1572864, 1, -196606, 1572864, 1, -196605, 1572864, 1, 262140, 1572864, 1, 262141, 1572864, 1, 262142, 1572864, 1, 262143, 1572864, 1, 196608, 1572864, 1, 196609, 1572864, 1, 196610, 1572864, 1, 196611, 1572864, 1, -196612, 1572864, 1, -196611, 1572864, 1, -196610, 1572864, 1, -196609, 1572864, 1, -262144, 1572864, 1, -262143, 1572864, 1, -262142, 1572864, 1, -262141, 1572864, 1, -262149, 1572864, 1, -196613, 1572864, 1, -131077, 1572864, 1, -65541, 1572864, 1, -5, 1572864, 1, 65531, 1572864, 1, 131067, 1572864, 1, 196603, 1572864, 1, 262139, 1572864, 1, 327675, 1572864, 1, 327676, 1572864, 1, 327677, 1572864, 1, 327678, 1572864, 1, 327679, 1572864, 2, 262144, 1572864, 2, 262145, 1572864, 1, 262146, 1572864, 1, 262147, 1572864, 1, 262148, 1572864, 1, 196612, 1572864, 1, 131076, 1572864, 1, 65540, 1572864, 1, 4, 1572864, 1, -65532, 1572864, 1, -131068, 1572864, 1, -196604, 1572864, 1, -262140, 1572864, 1, -327677, 1572864, 1, -327676, 1572864, 1, -327678, 1572864, 1, -327679, 1572864, 1, -327680, 1572864, 1, -262145, 1572864, 1, -262146, 1572864, 1, -262147, 1572864, 1, -262148, 1572864, 1, 327674, 1507328, 2, 262138, 1507328, 2, 196602, 1507328, 2, 131066, 1507328, 2, 65530, 1507328, 2, -6, 1507328, 2, -65542, 1507328, 2, -131078, 1507328, 2, -196614, 1507328, 2, -262150, 1507328, 2, -327685, 1572864, 3, -327684, 1572864, 3, -327683, 1572864, 3, -327682, 1572864, 3, -327681, 1572864, 3, -393216, 1572864, 3, -393215, 1572864, 3, -393214, 1572864, 3, -393213, 1572864, 3, -393212, 1572864, 3, -327675, 1638400, 2, -262139, 1638400, 2, -196603, 1638400, 2, -131067, 1638400, 2, -65531, 1638400, 2, 5, 1638400, 2, 65541, 1638400, 2, 131077, 1638400, 2, 196613, 1638400, 2, 262149, 1638400, 2, 327684, 1572864, 3, 327683, 1572864, 3, 327682, 1572864, 3, 327681, 1572864, 3, 393214, 1572864, 3, 393213, 1572864, 3, 393212, 1572864, 3, 393211, 1572864, 3, -327686, 1507328, 2, -393211, 1638400, 2, 393210, 1507328, 2, 327685, 1638400, 2, 327680, 1572864, 3, 393215, 1572864, 3)
+layer_1/tile_data = PackedInt32Array(327679, 1507329, 0, 393215, 1507329, 1, 262144, 1703937, 0, 327680, 1703937, 1, 262139, 1245184, 12, 131067, 1245184, 12, -5, 1245184, 12, -131077, 1245184, 12, -262149, 1245184, 12, -327680, 1245184, 14, -327676, 1245184, 12, -196604, 1245184, 12, -65532, 1245184, 12, 65540, 1245184, 12, 196612, 1245184, 12)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 84)
+shape = SubResource("RectangleShape2D_1wcba")
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(105, -0.5)
+shape = SubResource("RectangleShape2D_ymvw4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2"]
+position = Vector2(-103, -0.25)
+shape = SubResource("RectangleShape2D_ymvw4")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3"]
+position = Vector2(-107, -1.99999)
+shape = SubResource("RectangleShape2D_ymvw4")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls"]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4"]
+position = Vector2(106, 0.999992)
+shape = SubResource("RectangleShape2D_ymvw4")
+
+[node name="Code" type="Node2D" parent="."]
+
+[node name="Panel-transparent-border-024" type="Sprite2D" parent="Code"]
+position = Vector2(-47, -107)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_54mjv")
+
+[node name="Panel-transparent-border-026" type="Sprite2D" parent="Code"]
+position = Vector2(-16, -107)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_exebr")
+
+[node name="Panel-transparent-center-012" type="Sprite2D" parent="Code"]
+position = Vector2(16, -107)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_jr0dr")
+
+[node name="Panel-transparent-center-013" type="Sprite2D" parent="Code"]
+position = Vector2(50, -107)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_jr0dr")
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Code1" parent="Items" instance=ExtResource("7_vuik7")]
+position = Vector2(-7, -7)
+scale = Vector2(0.2, 0.2)
+
+[node name="Labels" type="Node2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="H" type="Label" parent="Labels"]
+offset_left = -90.0
+offset_top = 1.0
+offset_right = -70.0
+offset_bottom = 18.0
+text = "H"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="E" type="Label" parent="Labels"]
+offset_left = 82.0
+offset_top = 66.0
+offset_right = 102.0
+offset_bottom = 83.0
+text = "E
+"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="L" type="Label" parent="Labels"]
+offset_left = 84.0
+offset_top = -31.0
+offset_right = 104.0
+offset_bottom = -14.0
+text = "L"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="Reset" type="Label" parent="Labels"]
+offset_left = -5.0
+offset_top = -76.0
+offset_right = 35.0
+offset_bottom = -53.0
+text = "Reset"
+label_settings = SubResource("LabelSettings_px0ss")
+
+[node name="O" type="Label" parent="Labels"]
+offset_left = 83.0
+offset_top = 1.0
+offset_right = 103.0
+offset_bottom = 18.0
+text = "O
+"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="N" type="Label" parent="Labels"]
+offset_left = 83.0
+offset_top = 34.0
+offset_right = 103.0
+offset_bottom = 51.0
+text = "N
+"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="R" type="Label" parent="Labels"]
+offset_left = 84.0
+offset_top = -63.0
+offset_right = 104.0
+offset_bottom = -46.0
+text = "R
+"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="I" type="Label" parent="Labels"]
+offset_left = -90.0
+offset_top = -62.0
+offset_right = -70.0
+offset_bottom = -45.0
+text = "I"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="T" type="Label" parent="Labels"]
+offset_left = -90.0
+offset_top = -30.0
+offset_right = -70.0
+offset_bottom = -13.0
+text = "T
+"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="A" type="Label" parent="Labels"]
+offset_left = -90.0
+offset_top = 34.0
+offset_right = -70.0
+offset_bottom = 51.0
+text = "A"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="S" type="Label" parent="Labels"]
+offset_left = -90.0
+offset_top = 65.0
+offset_right = -70.0
+offset_bottom = 82.0
+text = "S
+"
+label_settings = SubResource("LabelSettings_7oxqf")
+
+[node name="Pressure plates" type="Node2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="H" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/H"]
+position = Vector2(-72, 8.5)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="S" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/S"]
+position = Vector2(-72, 73)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="A" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/A"]
+position = Vector2(-72, 41)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="E" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/E"]
+position = Vector2(72, 73)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="N" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/N"]
+position = Vector2(72, 41)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="O" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/O"]
+position = Vector2(72, 9)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="L" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/L"]
+position = Vector2(72, -23)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="Reset" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/Reset"]
+position = Vector2(8, -55)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="T" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/T"]
+position = Vector2(-71, -23)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="I" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/I"]
+position = Vector2(-72, -55)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="R" type="Area2D" parent="Pressure plates"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plates/R"]
+position = Vector2(73, -56)
+shape = SubResource("RectangleShape2D_pcbbp")
+
+[node name="Reset" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_d5je7")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_3gblf")
+
+[node name="Player" parent="." instance=ExtResource("1_wn73y")]
+position = Vector2(-8, 54)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Pressure plates/H" to="." method="_on_h_body_entered"]
+[connection signal="body_exited" from="Pressure plates/H" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/S" to="." method="_on_wrong_body_entered"]
+[connection signal="body_exited" from="Pressure plates/S" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/A" to="." method="_on_wrong_body_entered"]
+[connection signal="body_exited" from="Pressure plates/A" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/E" to="." method="_on_e_body_entered"]
+[connection signal="body_exited" from="Pressure plates/E" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/N" to="." method="_on_wrong_body_entered"]
+[connection signal="body_exited" from="Pressure plates/N" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/O" to="." method="_on_wrong_body_entered"]
+[connection signal="body_exited" from="Pressure plates/O" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/L" to="." method="_on_l_body_entered"]
+[connection signal="body_exited" from="Pressure plates/L" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/Reset" to="." method="_on_reset_body_entered"]
+[connection signal="body_entered" from="Pressure plates/T" to="." method="_on_wrong_body_entered"]
+[connection signal="body_exited" from="Pressure plates/T" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/I" to="." method="_on_wrong_body_entered"]
+[connection signal="body_exited" from="Pressure plates/I" to="." method="_on_h_body_exited"]
+[connection signal="body_entered" from="Pressure plates/R" to="." method="_on_wrong_body_entered"]
+[connection signal="body_exited" from="Pressure plates/R" to="." method="_on_h_body_exited"]

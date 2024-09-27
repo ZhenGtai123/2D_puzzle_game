@@ -1,0 +1,207 @@
+[gd_scene load_steps=10 format=3 uid="uid://dboefqtpk254v"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/inv_ui.gd" id="1_6adgi"]
+[ext_resource type="Texture2D" uid="uid://dlg8t04lu3v24" path="res://asstes/inventory/UI/panelInset_beige.png" id="2_h6ddb"]
+[ext_resource type="PackedScene" uid="uid://b4p8ohuw4ejyn" path="res://Scenes/inventory/grabbed_slot.tscn" id="2_sqy1f"]
+[ext_resource type="Texture2D" uid="uid://bp634raexsy8c" path="res://asstes/kenney_ui-pack/PNG/red_button03.png" id="3_aoo1y"]
+[ext_resource type="Texture2D" uid="uid://dsict8673o24p" path="res://asstes/inventory/UI/panel_brown.png" id="3_hklw7"]
+[ext_resource type="PackedScene" uid="uid://dmups0elwmxhb" path="res://Scenes/inventory/slot.tscn" id="3_nabgy"]
+[ext_resource type="PackedScene" uid="uid://vob4hkc5a60f" path="res://Scenes/inventory/craft_slot.tscn" id="4_glwa0"]
+[ext_resource type="AudioStream" uid="uid://cvsc7mfwrpujg" path="res://asstes/Sounds/click-for-game-menu-131903.mp3" id="4_o8fdk"]
+[ext_resource type="Texture2D" uid="uid://b328qm34vhrur" path="res://asstes/inventory/UI/buttonRound_blue.png" id="5_flr80"]
+
+[node name="Control" type="Control"]
+modulate = Color(1, 1, 1, 0.870588)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 199.0
+offset_bottom = 152.0
+script = ExtResource("1_6adgi")
+
+[node name="craft" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 16.0
+offset_right = 56.0
+offset_bottom = 40.0
+
+[node name="final_slot" type="Button" parent="craft"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 15.0
+offset_right = 354.0
+offset_bottom = 55.0
+scale = Vector2(1.27154, 1.3121)
+
+[node name="background2" type="Sprite2D" parent="craft/final_slot"]
+position = Vector2(19.7493, 19.0596)
+scale = Vector2(0.828056, 0.855631)
+texture = ExtResource("3_aoo1y")
+
+[node name="item_display2" type="Sprite2D" parent="craft/final_slot"]
+position = Vector2(20, 20)
+scale = Vector2(0.2, 0.199004)
+
+[node name="craft_sound" type="AudioStreamPlayer2D" parent="craft/final_slot"]
+stream = ExtResource("4_o8fdk")
+
+[node name="name" type="Label" parent="craft/final_slot"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="craft"]
+clip_contents = true
+layout_mode = 0
+offset_left = 209.0
+offset_top = 2.0
+offset_right = 293.0
+offset_bottom = 82.0
+texture = ExtResource("3_hklw7")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="craft/NinePatchRect2"]
+clip_contents = true
+layout_mode = 1
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 76.0
+offset_bottom = 76.0
+columns = 2
+
+[node name="Slot" parent="craft/NinePatchRect2/GridContainer" instance=ExtResource("4_glwa0")]
+layout_mode = 2
+
+[node name="Slot2" parent="craft/NinePatchRect2/GridContainer" instance=ExtResource("4_glwa0")]
+layout_mode = 2
+
+[node name="Slot3" parent="craft/NinePatchRect2/GridContainer" instance=ExtResource("4_glwa0")]
+layout_mode = 2
+
+[node name="Slot4" parent="craft/NinePatchRect2/GridContainer" instance=ExtResource("4_glwa0")]
+layout_mode = 2
+
+[node name="craft_button" type="Button" parent="craft"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 82.0
+offset_right = 274.0
+offset_bottom = 128.0
+icon = ExtResource("5_flr80")
+flat = true
+
+[node name="Label" type="Label" parent="craft/craft_button"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 48.0
+offset_right = 46.0
+offset_bottom = 74.0
+text = "CRAFT"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 148.0
+texture = ExtResource("2_h6ddb")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+clip_contents = true
+layout_mode = 1
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 184.0
+offset_bottom = 146.0
+columns = 5
+
+[node name="Slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot17" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot18" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot19" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="Slot20" parent="NinePatchRect/GridContainer" instance=ExtResource("3_nabgy")]
+layout_mode = 2
+
+[node name="grabbed_slot" parent="." instance=ExtResource("2_sqy1f")]
+visible = false
+layout_mode = 2
+offset_left = 8.0
+offset_top = 150.0
+offset_right = 40.0
+offset_bottom = 182.0
+mouse_force_pass_scroll_events = false
+
+[node name="goodluck" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 197.0
+offset_top = 79.0
+offset_right = 356.0
+offset_bottom = 131.0
+text = "Well done! Good luck with the game!"
+autowrap_mode = 3
+
+[node name="Timer2s" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="pressed" from="craft/final_slot" to="." method="_on_final_slot_pressed"]
+[connection signal="pressed" from="craft/craft_button" to="." method="_on_craft_button_pressed"]

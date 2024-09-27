@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://boc1fk0cr06b8"]
+
+[ext_resource type="Script" path="res://Scenes/inventory/items/item.gd" id="1_thnir"]
+[ext_resource type="Script" path="res://Scenes/inventory/inventory_item.gd" id="2_metgj"]
+[ext_resource type="Texture2D" uid="uid://dxm1fhg6gmyb0" path="res://asstes/Code/E.PNG" id="3_atj3w"]
+
+[sub_resource type="Resource" id="Resource_kat8e"]
+script = ExtResource("2_metgj")
+name = "E"
+texture = ExtResource("3_atj3w")
+stackable = false
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5pql"]
+radius = 56.0089
+
+[node name="E" type="Node2D"]
+script = ExtResource("1_thnir")
+item = SubResource("Resource_kat8e")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(44, 34)
+shape = SubResource("CircleShape2D_j5pql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(44.75, 33.75)
+scale = Vector2(0.573394, 0.596)
+texture = ExtResource("3_atj3w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

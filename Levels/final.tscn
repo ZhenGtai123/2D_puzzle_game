@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7cg4pjr1e65b"]
+
+[ext_resource type="Script" path="res://Levels/final.gd" id="1_putye"]
+[ext_resource type="AudioStream" uid="uid://cbxywtls0kwkh" path="res://asstes/Sounds/success-fanfare-trumpets-6185 (1).mp3" id="2_31icw"]
+[ext_resource type="AudioStream" uid="uid://dta3edihadpu4" path="res://asstes/Sounds/wah-wah-sad-trombone-6347.mp3" id="3_33l4i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ogvrb"]
+font_size = 10
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(5.3, 5.3)
+script = ExtResource("1_putye")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(5.49581, 3.62596)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Success" type="Label" parent="."]
+offset_left = 39.6226
+offset_top = 38.6792
+offset_right = 258.623
+offset_bottom = 116.679
+scale = Vector2(0.6, 0.6)
+text = "You have escaped from Hellius!
+Thanks for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Fail" type="Label" parent="."]
+visible = false
+offset_left = 39.2453
+offset_top = 41.5094
+offset_right = 258.245
+offset_bottom = 119.509
+scale = Vector2(0.6, 0.6)
+text = "You have failed to escape from Hellius!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_31icw")
+
+[node name="lose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_33l4i")
+
+[node name="Credits" type="Label" parent="."]
+visible = false
+offset_left = -5.4717
+offset_top = -63.0189
+offset_right = 218.528
+offset_bottom = 89.9811
+text = "Credits:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credits2" type="Label" parent="."]
+visible = false
+offset_left = 1.69811
+offset_top = -14.3396
+offset_right = 365.698
+offset_bottom = 225.66
+scale = Vector2(0.6, 0.6)
+text = "
+Kenney asset packs:
+- Roguelike indoors
+-Roguelike caves & dungeons
+-Tiny town
+-Tiny dungeon
+-Fantasy UI borders
+-Generic items"
+label_settings = SubResource("LabelSettings_ogvrb")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Credits3" type="Label" parent="."]
+visible = false
+offset_left = 112.264
+offset_top = 27.3585
+offset_right = 289.264
+offset_bottom = 171.358
+scale = Vector2(0.6, 0.6)
+text = "Other assets:
+sventhole.itch.io/flame-demons-64-x64
+brullov.itch.io/fire-animation
+
+Sounds:
+mixkit.co/free-sound-effects/
+pixabay.com"
+label_settings = SubResource("LabelSettings_ogvrb")
+autowrap_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

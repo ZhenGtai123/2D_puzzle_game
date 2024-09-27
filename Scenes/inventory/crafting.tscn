@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://o3ouo7d6f83p"]
+
+[ext_resource type="PackedScene" uid="uid://bsphqr4pymtel" path="res://Scenes/inventory/final_slot.tscn" id="2_eembm"]
+[ext_resource type="Texture2D" uid="uid://dsict8673o24p" path="res://asstes/inventory/UI/panel_brown.png" id="2_x0xod"]
+[ext_resource type="PackedScene" uid="uid://vob4hkc5a60f" path="res://Scenes/inventory/craft_slot.tscn" id="3_548h4"]
+[ext_resource type="Texture2D" uid="uid://b328qm34vhrur" path="res://asstes/inventory/UI/buttonRound_blue.png" id="5_cthiw"]
+
+[node name="Control" type="Control"]
+modulate = Color(1, 1, 1, 0.870588)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 85.0
+offset_bottom = 79.0
+
+[node name="final_slot" parent="." instance=ExtResource("2_eembm")]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 6.0
+offset_right = 140.0
+offset_bottom = 38.0
+scale = Vector2(2, 2)
+script = null
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_right = 84.0
+offset_bottom = 80.0
+texture = ExtResource("2_x0xod")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+clip_contents = true
+layout_mode = 1
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 76.0
+offset_bottom = 76.0
+columns = 2
+
+[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_548h4")]
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_548h4")]
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_548h4")]
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_548h4")]
+layout_mode = 2
+
+[node name="craft_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 87.0
+offset_right = 63.0
+offset_bottom = 133.0
+icon = ExtResource("5_cthiw")
+flat = true
+
+[node name="Label" type="Label" parent="craft_button"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 48.0
+offset_right = 46.0
+offset_bottom = 74.0
+text = "CRAFT"
